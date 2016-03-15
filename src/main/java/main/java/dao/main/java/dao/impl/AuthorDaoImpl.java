@@ -1,7 +1,6 @@
 package main.java.dao.main.java.dao.impl;
 
-import main.java.dao.BookDao;
-import main.java.table.Book;
+import main.java.table.Author;
 import main.java.util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -9,34 +8,33 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by Admin on 13.03.2016.
+ * Created by Admin on 15.03.2016.
  */
-public class BookDaoImpl implements BookDao {
-
-
-@Override
-    public void addBook(Book book) throws SQLException {
+public class AuthorDaoImpl implements AuthorDao {
+    @Override
+    public void addAuthor(Author author) throws SQLException {
         Session session =null;
         try {
-            session =HibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(book);
+            session.save(author);
             session.getTransaction().commit();
         }catch (Exception e ){
             e.printStackTrace();
         }
         finally {
             if((session!=null)&&(session.isOpen()))
-            session.close();
+                session.close();
         }
     }
+
     @Override
-    public void deleteBook(Book book) throws SQLException {
+    public void deleteAuthor(Author author) throws SQLException {
         Session session = null;
         try {
             session =HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.delete(book);
+            session.delete(author);
             session.getTransaction().commit();
         }catch (Exception e ){
             e.printStackTrace();
@@ -47,13 +45,14 @@ public class BookDaoImpl implements BookDao {
         }
 
     }
+
     @Override
-    public Book getBook(int id) throws SQLException {
-        Book result = null;
+    public Author getAuthor(int id) throws SQLException {
+        Author result = null;
         Session session = null;
         try {
             session =HibernateUtil.getSessionFactory().openSession();
-        result = (Book)session.get(Book.class,id);
+            result = (Author)session.get(Author.class,id);
         }catch (Exception e ){
             e.printStackTrace();
         }
@@ -68,31 +67,12 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public Book getBook(String title) throws SQLException {
-        Book result = null;
-        Session session = null;
-        try {
-            session =HibernateUtil.getSessionFactory().openSession();
-            result = (Book)session.get(Book.class,title);
-        }catch (Exception e ){
-            e.printStackTrace();
-        }
-        finally {
-            if((session!=null)&&(session.isOpen()))
-                session.close();
-        }
-
-        return result;
-
-    }
-
-    @Override
-    public List<Book> getBooks() throws SQLException {
-        List<Book>books = null;
+    public List<Author> getAuthor() throws SQLException {
+        List<Author>authors = null;
         Session session =  null;
         try {
             session =HibernateUtil.getSessionFactory().openSession();
-          books=  session.createCriteria(Book.class).list();
+            authors=  session.createCriteria(Author.class).list();
 
         }catch (Exception e ){
             e.printStackTrace();
@@ -104,6 +84,6 @@ public class BookDaoImpl implements BookDao {
             System.out.println(session.isOpen());
         }
 
-        return books;
+        return authors;
     }
 }

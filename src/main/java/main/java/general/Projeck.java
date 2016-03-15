@@ -1,8 +1,8 @@
 package main.java.general;
 
 
-import main.java.dao.BookDao;
-import main.java.table.Book;
+import main.java.dao.main.java.dao.impl.AuthorDao;
+import main.java.table.Author;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,20 +10,32 @@ import java.util.List;
 public class Projeck {
     public static void main(String[] args) throws SQLException {
         Factory factory = Factory.getInstance();
-       BookDao bookDao =  factory.getBookDao();
-        for (int i = 0 ;i<10;i++){
-      Book book =  new Book();
-        book.setTitle("к");
-        book.setIsbn(i+1000);
-            book.setDescription("iii"+i);
+       //BookDao bookDao =  factory.getBookDao();
+        AuthorDao authorDao = factory.getAuthorDao();
 
-        bookDao.addBook(book);}
-
-
-        //System.out.println(">>>>>>>>>>>"+bookDao.getBook("к"));
+        /*for (int i = 0 ;i<5;i++){
+      Author author =  new Author();
+        author.setFierstName("vasya"+1);
+            author.setMidletName("vasilivich"+1);
+            author.setLastName("Ivanov"+1);
 
 
-      List<Book> books= bookDao.getBooks();
+
+        authorDao.addAuthor(author);}*/
+
+
+        List<Author> authors= authorDao.getAuthor();
+        System.out.println("id  isdn title description");
+        for (Author aut : authors) {
+            //if(boo.getId()==6)bookDao.deleteBook(boo);
+
+
+            System.out.println(aut.getId() + " " + aut.getFierstName() + "  " +
+                    aut.getMidletName() + "  " + aut.getLastName());
+
+        }
+        System.out.println("======================================");
+     /* List<Book> books= bookDao.getBooks();
         System.out.println("id  isdn title description");
         for (Book boo : books){
     //if(boo.getId()==6)bookDao.deleteBook(boo);
@@ -31,7 +43,7 @@ public class Projeck {
 
             System.out.println(  boo.getId()+" "+ boo.getIsbn()+"  "+
                     boo.getDescription()+"  " +boo.getTitle());
-        }
+        }*/
 
 
     }

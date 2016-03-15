@@ -16,5 +16,11 @@
       <schema-pattern>mydbtest.*</schema-pattern>
       <default-schemas>mydbtest.*</default-schemas>
     </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="d1237a73-87ab-41d0-b407-70d3063a10b3">
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <schema-pattern>mydbtest.*</schema-pattern>
+      <default-schemas>mydbtest.*</default-schemas>
+    </data-source>
   </component>
 </project>

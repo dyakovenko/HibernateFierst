@@ -75,4 +75,91 @@
       </key>
     </database-model>
   </data-source>
+  <data-source name="hibernate.cfg.xml/Hibernate" uuid="d1237a73-87ab-41d0-b407-70d3063a10b3">
+    <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="mydbtest"/>
+      <table id="2" parent="1" name="animals"/>
+      <table id="3" parent="1" name="author"/>
+      <table id="4" parent="1" name="book"/>
+      <table id="5" parent="1" name="user"/>
+      <column id="6" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="7" parent="2" name="anim_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="8" parent="2" name="anim_desk">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <index id="9" parent="2" name="id_UNIQUE">
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="10" parent="2" name="id_UNIQUE">
+        <columns>id</columns>
+        <underlying-index>id_UNIQUE</underlying-index>
+      </key>
+      <key id="11" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="12" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="13" parent="3" name="fierstName">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="14" parent="3" name="lastName">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="15" parent="3" name="midletName">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="16" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="17" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="18" parent="4" name="isbn">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="19" parent="4" name="title">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="20" parent="4" name="description">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="21" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="22" parent="5" name="USER_ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="23" parent="5" name="FIRST_NAME">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="24" parent="5" name="LAST_NAME">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <key id="25" parent="5" name="PRIMARY">
+        <columns>USER_ID</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
 </component>
