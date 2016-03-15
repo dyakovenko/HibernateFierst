@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - @localhost" uuid="1b77fc32-cab3-4c45-a01e-30eb5f05ac78">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="MySQL - animals@localhost" uuid="60d2386f-0378-4a48-944f-b7784d49fea5">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="MySQL - mydbtest@localhost" uuid="84cb13a9-937d-4c77-88f3-1519fa65f424">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>mydbtest.*</schema-pattern>
+      <default-schemas>mydbtest.*</default-schemas>
+    </data-source>
+  </component>
+</project>
